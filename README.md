@@ -53,5 +53,5 @@ Recognizing brute force attack patterns in logs
 ![Kibana Dashboard](screenshots/Kibana-dashboard.jpg)
 
 
-#Rule's
+# Rule's
 ![Kibana Dashboard](screenshots/Failed-logins-rule.jpg)
