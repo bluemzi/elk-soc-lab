@@ -50,6 +50,7 @@ Creating rules in Kibana
 Recognizing brute force attack patterns in logs
 
 # Screenshots
+## Dashboard
 ![Kibana Dashboard](screenshots/Kibana-dashboard.jpg)
 
 
