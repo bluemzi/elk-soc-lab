@@ -21,12 +21,12 @@ SIEM alert rule for brute force detection
 
 Tech stack:
 
-Elasticsearch 8.12.0
-Kibana 8.12.0
-Filebeat 8.12.0
-Docker + Docker Compose
-Ubuntu Server 22.04
-Hydra
+🔶 Elasticsearch 8.12.0
+🔶 Kibana 8.12.0
+🔶 Filebeat 8.12.0
+🔶 Docker + Docker Compose
+🔶 Ubuntu Server 22.04
+🔶 Hydra
 
 Detection Rules:
 
@@ -35,9 +35,11 @@ Invalid User Login Attempts — Detects repeated login attempts using non-existe
 Geographic Anomaly — Flags login attempts originating from high-risk countries
 
 How to run:
+```
 git clone https://github.com/bluemzi/elk-soc-lab.git
 cd elk-soc-lab
 ./scripts/elk.sh
+```
 
 What I learned:
 
