@@ -21,12 +21,12 @@ SIEM alert rule for brute force detection
 
 Tech stack:
 
-🔶 Elasticsearch 8.12.0
-🔶 Kibana 8.12.0
-🔶 Filebeat 8.12.0
-🔶 Docker + Docker Compose
-🔶 Ubuntu Server 22.04
-🔶 Hydra
+Elasticsearch 8.12.0
+Kibana 8.12.0
+Filebeat 8.12.0
+Docker + Docker Compose
+Ubuntu Server 22.04
+Hydra
 
 Detection Rules:
 
