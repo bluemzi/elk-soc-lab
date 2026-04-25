@@ -1,3 +1,5 @@
+# This project is currently work in progress!
+
 # elk-soc-lab
 ## ELK Stack SIEM Home Lab
 
