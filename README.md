@@ -53,7 +53,12 @@ Recognizing brute force attack patterns in logs
 
 # Screenshots
 ## Dashboard
-![Kibana Dashboard](screenshots/Kibana-dashboard.jpg)
+![Kibana Dashboard](screenshots/Dashboard.jpg)
+![Kibana Dashboard](screenshots/SSH-Attack-Origins.jpg)
+![Kibana Dashboard](screenshots/Usernames-and-Source-IP's.jpg)
+![Kibana Dashboard](screenshots/Failed-logins-timestamps.jpg)
+![Kibana Dashboard](screenshots/Failed-logins-filepath.jpg)
+![Kibana Dashboard](screenshots/Total-failed-logins.jpg)
 
 
 # Rule's
