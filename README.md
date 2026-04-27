@@ -59,10 +59,97 @@ The activity indicates an automated SSH brute force attack attempting credential
 
 ### Response Actions (Recommended)
 
-* Block malicious IP address (firewall / fail2ban)
-* Disable password-based SSH authentication (use key-based auth)
-* Review affected accounts for compromise
-* Monitor for continued activity or lateral movement
+* Block malicious IP address using Fail2ban (implemented)
+* Disable password-based SSH authentication (recommended)
+* Review affected accounts for compromise (recommended)
+* Monitor for continued activity or lateral movement (recommended)
+
+### Active Defense (Fail2ban)
+
+Fail2ban was configured to monitor SSH login attempts and automatically block IP addresses after multiple failed login attempts.
+
+* Log source: /var/log/auth.log
+* Action: IP ban after repeated failures
+
+### Fail2ban status
+```bash
+root@elk:~/phishing-lab# systemctl status fail2ban
+● fail2ban.service - Fail2Ban Service
+     Loaded: loaded (/lib/systemd/system/fail2ban.service; disabled; vendor preset: enabled)
+     Active: active (running) since Mon 2026-04-27 12:46:46 UTC; 1min 55s ago
+       Docs: man:fail2ban(1)
+   Main PID: 6780 (fail2ban-server)
+      Tasks: 5 (limit: 4554)
+     Memory: 13.0M
+        CPU: 126ms
+     CGroup: /system.slice/fail2ban.service
+             └─6780 /usr/bin/python3 /usr/bin/fail2ban-server -xf start
+
+Apr 27 12:46:46 elk systemd[1]: Started Fail2Ban Service.
+Apr 27 12:46:46 elk fail2ban-server[6780]: Server ready
+```
+### Fail2ban-client status
+```bash
+  root@elk:~/phishing-lab# sudo fail2ban-client status sshd
+Status for the jail: sshd
+|- Filter
+|  |- Currently failed: 0
+|  |- Total failed:     0
+|  `- File list:        /var/log/auth.log
+`- Actions
+   |- Currently banned: 0
+   |- Total banned:     0
+   `- Banned IP list:
+   ```
+### Active Defense (Fail2ban)
+
+Fail2ban was configured to monitor SSH authentication logs and automatically block IP addresses after repeated failed login attempts.
+
+* Log source: `/var/log/auth.log`
+* Detection: Multiple failed SSH login attempts within a short time window
+* Action: Automatic IP ban after exceeding threshold
+
+### Configuration
+
+```ini
+[sshd]
+enabled = true
+port = ssh
+logpath = /var/log/auth.log
+backend = auto
+maxretry = 3
+findtime = 60
+bantime = 600
+ignoreip =
+ignoreself = false
+```
+
+### Verification
+
+A brute force attack was simulated locally using repeated failed SSH login attempts.
+Fail2ban successfully detected the activity and banned the attacking IP.
+
+```bash
+sudo fail2ban-client status sshd
+```
+
+Example output:
+
+```text
+Status for the jail: sshd
+|- Filter
+|  |- Currently failed: 1
+|  |- Total failed:     8
+|  `- File list:        /var/log/auth.log
+`- Actions
+   |- Currently banned: 1
+   |- Total banned:     1
+   `- Banned IP list:   127.0.0.1
+```
+
+### Screenshot
+
+![Fail2ban in action](screenshots/fail2ban-status.jpg)
 
 ---
 
