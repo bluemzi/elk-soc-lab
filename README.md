@@ -149,7 +149,7 @@ Status for the jail: sshd
 
 ### Screenshot
 
-![Fail2ban in action](screenshots/fail2ban-status.jpg)
+![Fail2ban in action](screenshots/fail2ban-in-action.jpg)
 
 ---
 
