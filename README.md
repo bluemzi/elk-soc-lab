@@ -55,6 +55,7 @@ Recognizing brute force attack patterns in logs
 ## Dashboard
 ![Kibana Dashboard](screenshots/Dashboard.jpg)
 # SSH Attack Origins.
+### Visualizes the geographic origin of SSH brute force attempts based on GeoIP enrichment of source IP addresses ingested from /var/log/auth.log.
 ![Kibana Dashboard](screenshots/SSH-Attack-Origins.jpg)
 # Which users tried to login and what is the Source IP?
 ![Kibana Dashboard](screenshots/Usernames-and-Source-IP's.jpg)
