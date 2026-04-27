@@ -54,10 +54,16 @@ Recognizing brute force attack patterns in logs
 # Screenshots
 ## Dashboard
 ![Kibana Dashboard](screenshots/Dashboard.jpg)
+# SSH Attack Origins.
 ![Kibana Dashboard](screenshots/SSH-Attack-Origins.jpg)
+# Which users tried to login and what is the Source IP?
 ![Kibana Dashboard](screenshots/Usernames-and-Source-IP's.jpg)
+# Failed logins with timestamps.
 ![Kibana Dashboard](screenshots/Failed-logins-timestamps.jpg)
+# From which file was the failed logins collected?
+## filebeat 8.12.0 was used to collect data from /var/log/auth.log
 ![Kibana Dashboard](screenshots/Failed-logins-filepath.jpg)
+# How many failed logins were detected?
 ![Kibana Dashboard](screenshots/Total-failed-logins.jpg)
 
 
