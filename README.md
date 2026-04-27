@@ -1,4 +1,4 @@
-# This project is currently work in progress!
+# This project is a work in progress.
 
 # elk-soc-lab
 
@@ -216,3 +216,12 @@ Filebeat 8.12.0 was used to collect data from /var/log/auth.log
 ## Detection Rule
 
 ![Failed logins rule](screenshots/Failed-logins-rule.jpg)
+
+## Why this matters
+
+This lab demonstrates a basic SOC workflow:
+- Detection of malicious activity (SSH brute force)
+- Log analysis in a SIEM (ELK)
+- Automated response using Fail2ban
+
+It reflects real-world blue team operations in a simplified environment.
